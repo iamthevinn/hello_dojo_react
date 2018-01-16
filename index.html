@@ -22,7 +22,15 @@
     ReactDOM.render(headerList, document.getElementById("headerList"))
 
     const values = ["Learning React","Climb Mt. Everest","Run a marathon","Feed the dogs"];
-    const listItems = values.map((value) => React.createElement("li",null,value));
+    const listItems = [];
+    for (let i = 0; i <values.length; i++) {
+        listItems.push(React.createElement("li", {key: values[i]}, values[i]))
+        listItems[i].key = values[i]
+    }
+
+    //"li key={ " + todo.id + "}>{" + todo.text + "}</li>"
+
+    //const listItems = values.map((value) => React.createElement("li", null, value));
     console.log(listItems)
     ReactDOM.render(listItems, document.getElementById('bulletList'));
 </script>
