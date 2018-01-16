@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hello Dojo!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+  <script src="node_modules/react/umd/react.development.js"></script>
+  <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+</head>
+<body>
+  <div id="helloHeader"></div>
+  <div id="headerList"></div>
+  <div id="bulletList"></div>
+</body>
+<script>
+    let header = React.createElement("h1", null, "Hello Dojo!")
+    ReactDOM.render(header, document.getElementById("helloHeader"))
+
+    let headerList = React.createElement("h3", null, "Things I need to do:")
+    ReactDOM.render(headerList, document.getElementById("headerList"))
+
+    const values = ["Learning React","Climb Mt. Everest","Run a marathon","Feed the dogs"];
+    const listItems = values.map((value) => React.createElement("li",null,value));
+    console.log(listItems)
+    ReactDOM.render(listItems, document.getElementById('bulletList'));
+</script>
+</html>
